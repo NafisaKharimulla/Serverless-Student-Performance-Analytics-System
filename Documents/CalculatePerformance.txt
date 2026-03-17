@@ -1,0 +1,23 @@
+Part 2 — Performance Category Calculation
+
+A new attribute called performance_category is calculated based on the student's total_score.
+
+Rules:
+- If total_score >= 90 → Excellent
+- If total_score between 75 and 89 → Good
+- If total_score between 60 and 74 → Average
+- If total_score < 60 → Poor
+
+Python Implementation:
+
+def calculate_category(score):
+    if score >= 90:
+        return "Excellent"
+    elif score >= 75:
+        return "Good"
+    elif score >= 60:
+        return "Average"
+    else:
+        return "Poor"
+
+This function is used in the AWS Lambda function to dynamically assign performance categories to each student record before storing it in DynamoDB.
