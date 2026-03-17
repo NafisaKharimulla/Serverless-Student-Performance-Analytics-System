@@ -1,0 +1,44 @@
+📄 Part 1 — DynamoDB Table Design
+
+Table Name:
+student_performance
+
+Primary Key:
+- Partition Key: student_id (String)
+
+Attributes:
+- student_id (String): Unique identifier for each student
+- weekly_self_study_hours (Number): Weekly study hours
+- attendance_percentage (Number): Attendance percentage
+- class_participation (Number): Participation score
+- total_score (Number): Total marks obtained
+- grade (String): Student grade (A, B, C, etc.)
+- performance_category (String): Performance level (Excellent, Good, Average, Poor)
+
+Table Design Explanation:
+Amazon DynamoDB is a schema-less NoSQL database. Only the primary key (student_id) is required during table creation. Other attributes are automatically added when data is inserted into the table. This provides flexibility and scalability for handling structured data.
+
+Global Secondary Index (GSI):
+- Index Name: grade-total_score-index
+- Partition Key: grade (String)
+- Sort Key: total_score (Number)
+
+Purpose of GSI:
+The GSI allows efficient querying of:
+- Top students in a specific grade (e.g., Grade A)
+- Students with highest scores
+- Filtered and sorted results without scanning the entire table
+
+Sample Record:
+{
+  "student_id": "ST001",
+  "weekly_self_study_hours": 12,
+  "attendance_percentage": 92,
+  "class_participation": 8,
+  "total_score": 88,
+  "grade": "B",
+  "performance_category": "Good"
+}
+
+Summary:
+The student_performance table is designed to store student academic data efficiently, support fast lookups using student_id, enable advanced queries using GSI, and integrate with AWS Lambda for automated processing.
