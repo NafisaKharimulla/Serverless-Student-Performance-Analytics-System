@@ -1,0 +1,27 @@
+Part 3 — S3 Bucket Setup and Dataset Upload
+
+An Amazon S3 bucket was created to store student performance datasets.
+
+Bucket Details:
+- Bucket Name: student-performance-datasets
+- Region: Default AWS region
+
+Dataset Upload:
+The dataset was converted into JSON format and uploaded into the S3 bucket.
+
+The JSON file contains multiple student records in array format.
+
+Example Format:
+[
+  {
+    "student_id": "ST001",
+    "weekly_self_study_hours": 12,
+    "attendance_percentage": 92,
+    "class_participation": 8,
+    "total_score": 88,
+    "grade": "B"
+  }
+]
+
+Purpose:
+The S3 bucket acts as the entry point of the system. Whenever a new dataset is uploaded, it will trigger an AWS Lambda function to process the data and store it in DynamoDB.
