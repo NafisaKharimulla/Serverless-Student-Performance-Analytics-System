@@ -1,0 +1,62 @@
+PART 4 — LAMBDA PROCESSING 
+Objective:
+To build an AWS Lambda function that automatically processes student performance data uploaded to Amazon S3 and stores the processed data into Amazon DynamoDB.
+
+Architecture Flow:
+Upload JSON File → Amazon S3 → (Trigger Event) → AWS Lambda → Amazon DynamoDB
+
+Services Used:
+- Amazon S3: Stores uploaded JSON dataset
+- AWS Lambda: Processes data automatically
+- Amazon DynamoDB: Stores processed records
+- Python: Used for writing Lambda function
+
+File Used:
+students.json
+
+Workflow:
+
+1. File Upload to S3:
+A JSON file (students.json) is uploaded to the S3 bucket named 'student-performance-datasets'.
+
+2. Trigger Event:
+S3 is configured with an ObjectCreated event that automatically triggers the Lambda function.
+
+3. Lambda Execution:
+Lambda function "process_student_data" is invoked when a new file is uploaded.
+
+4. Read File from S3:
+The Lambda function reads the uploaded file from the S3 bucket.
+
+5. Parse JSON Data:
+The file content is converted into Python objects and supports multiple student records.
+
+6. Data Processing:
+For each student record:
+- Convert student_id to string
+- Convert float values to Decimal (for DynamoDB compatibility)
+- Calculate performance_category based on total_score
+
+Rules:
+Score >= 90 → Excellent
+Score >= 75 → Good
+Score >= 60 → Average
+Score < 60 → Poor
+
+7. Store in DynamoDB:
+Processed records are inserted into 'student_performance' table using batch processing.
+
+Key Features:
+- Fully serverless architecture
+- Automatic trigger from S3
+- Handles multiple records in a single file
+- Efficient batch data insertion
+- Real-time data processing
+
+Challenges:
+- Lambda timeout issue (resolved by increasing timeout)
+- Large file handling limitations (used smaller datasets)
+- Trigger configuration overlap issue (resolved by fixing S3 event settings)
+
+Final Outcome:
+A complete serverless pipeline (S3 → Lambda → DynamoDB) that automatically processes and stores student performance data efficiently.
