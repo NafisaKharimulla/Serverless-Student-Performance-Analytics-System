@@ -1,0 +1,60 @@
+PART 5 — CRUD OPERATIONS DOCUMENTATION
+
+Objective:
+To implement basic CRUD (Create, Read, Update, Delete) operations on the student_performance table using Python and Amazon DynamoDB.
+
+Services Used:
+- Amazon DynamoDB: Used to store and manage student performance records
+- Python: Used to write scripts for performing CRUD operations
+- boto3: Python library used to connect with AWS services
+
+Table Used:
+student_performance
+
+Primary Key:
+student_id
+
+Operations Implemented:
+
+1. CREATE (Insert a New Student Record)
+A Python script was written to insert a new student record into the DynamoDB table.
+The script adds values such as student_id, weekly_self_study_hours, attendance_percentage, class_participation, total_score, and grade.
+
+Outcome:
+A new student record is successfully inserted into the table.
+
+
+2. READ (Retrieve Student Data)
+A Python script was written to retrieve student data using the primary key (student_id).
+
+Outcome:
+The script successfully fetches and displays the student record from DynamoDB.
+
+
+3. UPDATE (Modify Student Data)
+A Python script was written to update the following fields:
+- weekly_self_study_hours
+- attendance_percentage
+- class_participation
+- total_score
+- grade
+
+Outcome:
+The selected fields are successfully updated in the DynamoDB table.
+
+4. DELETE (Remove Student Record)
+A Python script was written to delete a student record using student_id.
+
+Outcome:
+The selected student record is successfully removed from the table.
+
+
+Features:
+- Simple and beginner-friendly Python scripts
+- Direct connection to DynamoDB using boto3
+- All four CRUD operations implemented successfully
+- Uses student_id as the primary key for operations
+
+
+Final Result:
+The student_performance table supports complete CRUD operations using Python scripts. This confirms that data can be inserted, retrieved, updated, and deleted successfully in the DynamoDB table.
