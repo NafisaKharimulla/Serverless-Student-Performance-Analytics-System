@@ -1,0 +1,61 @@
+PART 7 — GLOBAL SECONDARY INDEX (GSI) DOCUMENTATION
+
+Objective:
+To create a Global Secondary Index (GSI) on the student_performance table in Amazon DynamoDB and use it to retrieve top-performing students based on grade and total_score.
+
+Services Used:
+- Amazon DynamoDB: Used to store student performance data and create the secondary index
+- Python: Used to write scripts for querying data
+- boto3: Python library used to connect with AWS services
+
+Table Used:
+student_performance
+
+Primary Key:
+student_id
+
+Global Secondary Index Created:
+
+Index Name:
+grade-score-index
+
+Partition Key:
+grade
+
+Sort Key:
+total_score
+
+Purpose of the Index:
+The Global Secondary Index allows the system to retrieve students based on grade and sort them based on total_score. This improves query performance and avoids scanning the entire table.
+
+Operations Implemented Using the GSI:
+
+1. Retrieve Top Students in Grade A
+
+Description:
+A Python script was written to query the Global Secondary Index using grade = 'A' and sort the results by total_score in descending order.
+
+Outcome:
+The system successfully retrieves the top-performing students who belong to Grade A.
+
+
+
+2. Retrieve Students with Highest Scores
+
+Description:
+The same Global Secondary Index was used to retrieve students with the highest total_score by sorting the results in descending order.
+
+Outcome:
+The script successfully displays students who have the highest scores in the table.
+
+
+
+Features:
+- Efficient data retrieval using Global Secondary Index
+- No need to scan the entire DynamoDB table
+- Faster queries based on grade and total_score
+- Supports sorting using the sort key
+
+
+Final Result:
+A Global Secondary Index (grade-score-index) was successfully created on the student_performance table. The index allows efficient retrieval of top students based on grade and total_score, completing the secondary index implementation.
