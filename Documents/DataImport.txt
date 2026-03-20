@@ -1,0 +1,49 @@
+PART 8 — DATA IMPORT DOCUMENTATION
+
+Objective:
+To upload a dataset containing at least 200 student records to Amazon S3 and verify that the AWS Lambda function automatically processes the data and stores it in Amazon DynamoDB.
+
+Services Used:
+- Amazon S3: Used to upload and store the dataset file
+- AWS Lambda: Automatically processes the uploaded data
+- Amazon DynamoDB: Stores the processed student records
+- Python: Used to implement the Lambda processing logic
+
+Dataset Used:
+students.json (contains more than 200 student records)
+
+Workflow:
+
+1. Upload Dataset to S3:
+The dataset file students.json was uploaded to the S3 bucket named 'student-performance-datasets'.
+
+2. Automatic Trigger:
+The S3 bucket is configured with an ObjectCreated event that automatically triggers the Lambda function when a new file is uploaded.
+
+3. Lambda Processing:
+The Lambda function process_student_data is triggered automatically after the file upload. The function reads the JSON file, parses the data, and processes multiple student records.
+
+4. Data Transformation:
+For each student record, the Lambda function:
+- Converts student_id to string
+- Converts numeric values to Decimal format
+- Calculates performance_category based on total_score
+
+5. Data Storage in DynamoDB:
+After processing, all student records are inserted into the DynamoDB table named 'student_performance'.
+
+Verification Process:
+
+- The dataset contained more than 200 records.
+- After uploading the file to S3, the Lambda function was triggered successfully.
+- CloudWatch logs confirmed that the Lambda function executed.
+- The DynamoDB table was checked, and the student records were successfully stored.
+
+Features:
+- Automatic data processing using serverless architecture
+- Supports multiple records in a single file
+- Efficient data storage using DynamoDB
+- Real-time processing after file upload
+
+Final Result:
+The dataset containing more than 200 student records was successfully uploaded to Amazon S3. The Lambda function processed the data automatically and stored the records in the student_performance table in DynamoDB. This confirms successful data import and processing in the system.
