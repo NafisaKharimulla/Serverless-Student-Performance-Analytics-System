@@ -1,0 +1,58 @@
+PART 6 — QUERY OPERATIONS DOCUMENTATION
+
+Objective:
+To retrieve student performance data from the student_performance table in Amazon DynamoDB using Python scripts and specific conditions.
+
+Services Used:
+- Amazon DynamoDB: Used to store and retrieve student performance data
+- Python: Used to write query scripts
+- boto3: Python library used to connect with AWS services
+
+Table Used:
+student_performance
+
+Primary Key:
+student_id
+
+Queries Implemented:
+
+------------------------------------------------------
+
+Query 1:
+Retrieve students with attendance_percentage > 90
+
+Description:
+A Python script was written to scan the DynamoDB table and filter students whose attendance percentage is greater than 90.
+
+Outcome:
+The script successfully displays all students who have high attendance.
+
+------------------------------------------------------
+
+Query 2:
+Retrieve students who studied more than weekly_self_study_hours > 10
+
+Description:
+A Python script was written to scan the DynamoDB table and filter students who studied more than 10 hours per week.
+
+Outcome:
+The script successfully retrieves and displays students who studied more than 10 hours.
+
+Query 3:
+Retrieve students in the Excellent performance category
+
+Description:
+A Python script was written to scan the DynamoDB table and filter students whose performance_category is equal to "Excellent".
+
+Outcome:
+The script successfully displays all students who belong to the Excellent performance category.
+
+
+Features:
+- Simple and beginner-friendly query scripts
+- Uses scan() operation to retrieve records
+- Filters records based on conditions
+- Works for multiple records in the DynamoDB table
+
+Final Result:
+The student_performance table supports multiple query operations using Python. The system can retrieve students based on attendance, study hours, and performance category successfully.
