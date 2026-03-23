@@ -39,6 +39,8 @@ Build a serverless system that:
 
 ## Dataset
 
+DataSet: https://www.kaggle.com/datasets/nabeelqureshitiii/student-performance-dataset/data
+
 Dataset used from Kaggle:
 Student Performance Dataset
 
@@ -217,34 +219,35 @@ The system handles:
 ```
 Serverless-Student-Performance-Analytics-System/
 │
-├── lambda_function/
-│ └── lambda_function.py
+├── documents/
+│   ├── project_overview.pdf
+│   ├── dynamodb_table_schema.pdf
+│   ├── lambda_function_documentation.pdf
+│   ├── crud_operations_document.pdf
+│   ├── query_operations_document.pdf
+│   ├── data_import_document.pdf
+│   ├── data_export_document.pdf
+│   └── architecture_diagram.pdf
 │
 ├── scripts/
-│ ├── insert_student.py
-│ ├── read_student.py
-│ ├── update_student.py
-│ ├── delete_student.py
-│ ├── query_operations.py
-│ └── export_data.py
-│
-├── dataset/
-│ └── student_performance_200_records.json
-│
-├── exported_data/
-│ ├── student_data.json
-│ └── student_data.csv
+│   ├── lambda_function.py
+│   ├── insert_student.py
+│   ├── read_student.py
+│   ├── update_student.py
+│   ├── delete_student.py
+│   ├── query_students.py
+│   └── export_data.py
 │
 ├── screenshots/
-│ ├── s3_bucket.png
-│ ├── lambda_trigger.png
-│ ├── dynamodb_table.png
-│ ├── gsi_index.png
-│ ├── dataset_upload.png
-│ └── export_result.png
-│
-├── architecture/
-│ └── architecture_diagram.png
+│   ├── s3_bucket_creation.png
+│   ├── dataset_upload_to_s3.png
+│   ├── lambda_trigger_configuration.png
+│   ├── lambda_execution_success.png
+│   ├── dynamodb_table_creation.png
+│   ├── dynamodb_table_records.png
+│   ├── gsi_index_creation.png
+│   ├── query_results.png
+│   └── export_file_uploaded_to_s3.png
 │
 └── README.md
 ```
