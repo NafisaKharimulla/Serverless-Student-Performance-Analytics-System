@@ -214,6 +214,7 @@ The system handles:
 
 ## Project Folder Structure
 
+```
 Serverless-Student-Performance-Analytics-System/
 │
 ├── lambda_function/
@@ -246,6 +247,7 @@ Serverless-Student-Performance-Analytics-System/
 │ └── architecture_diagram.png
 │
 └── README.md
+```
 
 ---
 
